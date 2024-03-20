@@ -17,18 +17,16 @@ export default async function Calendar({ params }: CalendarParams) {
     const results = await prisma.post.findMany();
 
     return (
-        <div className="p-1 max-w-full bg-orange-500">
-            <div className="flex flex-row flex-nowrap">
+        <div>
+            <div>
                 {daysOfTheWeek.map((day) => (
-                    <div key={day} className="flex-1 p-2 bg-gray-300">
-                        {day}
-                    </div>
+                    <div key={day}>{day}</div>
                 ))}
             </div>
 
             {Array.from({ length: weeksInMonth }, (_, weekIndex) => {
                 return (
-                    <div key={`w${weekIndex}`} className="flex flex-row flex-nowrap">
+                    <div key={`w${weekIndex}`}>
                         {Array.from({ length: 7 }, (_, dayOfWeekIndex) => {
                             const key = `w${weekIndex}-d${dayOfWeekIndex}`;
 
@@ -43,12 +41,12 @@ export default async function Calendar({ params }: CalendarParams) {
                                 }
 
                                 return (
-                                    <div key={key} className="flex-1 p-2 bg-gray-200">
-                                        <div className="inline-block ring-2 ring-blue-500">{dayCounter}</div> <div>{descriptions}</div>
+                                    <div key={key}>
+                                        <div>{dayCounter}</div> <div>{descriptions}</div>
                                     </div>
                                 );
                             } else {
-                                return <div key={key} className="flex-1 p-2 bg-gray-100"></div>;
+                                return <div key={key}></div>;
                             }
                         })}
                     </div>
