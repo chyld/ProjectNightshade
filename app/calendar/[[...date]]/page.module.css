@@ -1,0 +1,19 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: rgb(163 163 163);
+}
+
+.calendar > div {
+    background-color: rgb(212 212 212);
+}
+
+.date {
+    font-size: 11px;
+    background-color: orange;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
