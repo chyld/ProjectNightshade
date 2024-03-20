@@ -1,19 +1,53 @@
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 40px; /* first row only */
+    grid-auto-rows: minmax(100px, auto); /* all subsequent rows */
     gap: 1px;
-    background-color: rgb(163 163 163);
+    background-color: #cdcdcd;
+}
+
+.calendar > div:nth-child(-n + 7) {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
 }
 
 .calendar > div {
-    background-color: rgb(212 212 212);
+    background-color: #eeeeee;
+}
+
+.header {
+    font-size: 20px;
 }
 
 .date {
-    font-size: 11px;
-    background-color: orange;
-    padding: 10px;
     display: inline-block;
-    margin-top: 5px;
+    width: 25%;
+    height: 35px;
+    padding: 5px;
+    font-size: 12px;
+    background-color: #404040;
+    color: #ffffff;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.icon {
+    min-height: 20px;
+    min-width: 20px;
+    height: 20px;
+    width: 20px;
+    color: black;
+    margin-right: 5px;
+}
+
+.important {
+    background-color: #fecaca;
+}
+
+.description {
+    display: flex;
+    align-items: center; /* Centers vertically */
     margin-bottom: 10px;
 }

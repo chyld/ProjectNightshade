@@ -1,5 +1,6 @@
 import dayjs, { Dayjs } from "dayjs";
 import styles from "./page.module.css";
+import classNames from "classnames";
 import { CalendarParams } from "@/lib/types";
 import { getWeeksInCurrentMonth } from "@/lib/functions";
 import { PrismaClient } from "@prisma/client";
@@ -19,7 +20,9 @@ export default async function Calendar({ params }: CalendarParams) {
     return (
         <div className={styles.calendar}>
             {daysOfTheWeek.map((day) => (
-                <div key={day}>{day}</div>
+                <div key={day} className={styles.header}>
+                    {day}
+                </div>
             ))}
 
             {Array.from({ length: weeksInMonth }, (_, weekIndex) =>
@@ -33,17 +36,17 @@ export default async function Calendar({ params }: CalendarParams) {
                         for (const [index, result] of results.entries()) {
                             if (dayjs(result.beginDate).date() == dayCounter) {
                                 const icon = (
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={styles.icon}>
                                         <path
-                                            fill-rule="evenodd"
-                                            d="M15 8c0 .982-.472 1.854-1.202 2.402a2.995 2.995 0 0 1-.848 2.547 2.995 2.995 0 0 1-2.548.849A2.996 2.996 0 0 1 8 15a2.996 2.996 0 0 1-2.402-1.202 2.995 2.995 0 0 1-2.547-.848 2.995 2.995 0 0 1-.849-2.548A2.996 2.996 0 0 1 1 8c0-.982.472-1.854 1.202-2.402a2.995 2.995 0 0 1 .848-2.547 2.995 2.995 0 0 1 2.548-.849A2.995 2.995 0 0 1 8 1c.982 0 1.854.472 2.402 1.202a2.995 2.995 0 0 1 2.547.848c.695.695.978 1.645.849 2.548A2.996 2.996 0 0 1 15 8Zm-3.291-2.843a.75.75 0 0 1 .135 1.052l-4.25 5.5a.75.75 0 0 1-1.151.043l-2.25-2.5a.75.75 0 1 1 1.114-1.004l1.65 1.832 3.7-4.789a.75.75 0 0 1 1.052-.134Z"
-                                            clip-rule="evenodd"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"
                                         />
                                     </svg>
                                 );
 
                                 descriptions.push(
-                                    <div key={index}>
+                                    <div key={index} className={classNames(styles.description, { [styles.important]: result.isImportant })}>
                                         {icon} {`${result.description} [${result.category}]`}
                                     </div>
                                 );
