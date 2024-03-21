@@ -17,9 +17,9 @@ prisma.$on("query", (e) => {
     console.log("Query:", e);
 });
 
-export async function getPosts(theDate: Dayjs) {
-    const startOfMonth = theDate.startOf("month").toDate();
-    const endOfMonth = theDate.endOf("month").toDate();
+export async function getPosts(urlDate: Dayjs) {
+    const startOfMonth = urlDate.startOf("month").toDate();
+    const endOfMonth = urlDate.endOf("month").toDate();
 
     const results = await prisma.post.findMany({
         where: {

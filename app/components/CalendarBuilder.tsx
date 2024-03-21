@@ -2,12 +2,12 @@ import { Dayjs } from "dayjs";
 import { scalarFilter, vectorFilter, getWeeksInCurrentMonth } from "@/lib/functions";
 import { getPosts } from "@/lib/queries";
 
-export default async function CalendarBuilder({ theDate }: { theDate: Dayjs }) {
-    const indexFirstDayOfMonth = theDate.startOf("month").day();
-    const weeksInMonth = getWeeksInCurrentMonth(theDate);
-    const firstDayNextMonth = theDate.add(1, "month").startOf("month");
-    let dayCounter = theDate.startOf("month");
-    const results = await getPosts(theDate);
+export default async function CalendarBuilder({ urlDate }: { urlDate: Dayjs }) {
+    const indexFirstDayOfMonth = urlDate.startOf("month").day();
+    const weeksInMonth = getWeeksInCurrentMonth(urlDate);
+    const firstDayNextMonth = urlDate.add(1, "month").startOf("month");
+    let dayCounter = urlDate.startOf("month");
+    const results = await getPosts(urlDate);
 
     return (
         <>

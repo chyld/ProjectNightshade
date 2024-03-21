@@ -5,14 +5,14 @@ import CalendarDaysOfWeek from "@/app/components/CalendarDaysOfWeek";
 import CalendarBuilder from "@/app/components/CalendarBuilder";
 
 export default async function Calendar({ params }: CalendarParamsType) {
-    const theDate = params.date ? dayjs(`${params.date}-01`) : dayjs();
+    const urlDate = params.date ? dayjs(`${params.date}-01`) : dayjs();
 
     return (
         <div>
-            <CalendarHeader theDate={theDate} />
+            <CalendarHeader urlDate={urlDate} />
             <div id="calendar">
                 <CalendarDaysOfWeek></CalendarDaysOfWeek>
-                <CalendarBuilder theDate={theDate} />
+                <CalendarBuilder urlDate={urlDate} />
             </div>
         </div>
     );

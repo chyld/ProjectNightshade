@@ -1,9 +1,9 @@
 import { Dayjs } from "dayjs";
 import { DataModelInterface } from "../lib/types";
 
-export function getWeeksInCurrentMonth(theDate: Dayjs) {
-    const firstDayOfMonth = theDate.startOf("month");
-    const lastDayOfMonth = theDate.endOf("month");
+export function getWeeksInCurrentMonth(urlDate: Dayjs) {
+    const firstDayOfMonth = urlDate.startOf("month");
+    const lastDayOfMonth = urlDate.endOf("month");
     const daysInMonth = lastDayOfMonth.date();
     const indexFirstDayOfMonth = firstDayOfMonth.day();
     const totalDaysAdjusted = daysInMonth + indexFirstDayOfMonth;
