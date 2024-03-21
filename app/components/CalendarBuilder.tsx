@@ -1,6 +1,7 @@
 import { Dayjs } from "dayjs";
 import { scalarFilter, vectorFilter, getWeeksInCurrentMonth } from "@/lib/functions";
 import { getPosts } from "@/lib/queries";
+import CalendarBox from "./CalendarBox";
 
 export default async function CalendarBuilder({ urlDate }: { urlDate: Dayjs }) {
     const indexFirstDayOfMonth = urlDate.startOf("month").day();
@@ -19,10 +20,11 @@ export default async function CalendarBuilder({ urlDate }: { urlDate: Dayjs }) {
                         const scalars = scalarFilter(results, dayCounter);
                         const vectors = vectorFilter(results, dayCounter);
 
+                        const box = <CalendarBox key={key} day={dayCounter.date()} scalars={scalars} vectors={vectors} />;
                         dayCounter = dayCounter.add(1, "day");
-                        return <div key={key}>abc</div>;
+                        return box;
                     } else {
-                        return <div key={key}>---</div>;
+                        return <div key={key}></div>;
                     }
                 })
             )}

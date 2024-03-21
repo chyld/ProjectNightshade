@@ -1,21 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { Dayjs } from "dayjs";
 
-const prisma = new PrismaClient({
-    log: [
-        {
-            emit: "event",
-            level: "query",
-        },
-        "info",
-        "warn",
-        "error",
-    ],
-});
-
-prisma.$on("query", (e) => {
-    console.log("Query:", e);
-});
+const prisma = new PrismaClient();
 
 export async function getPosts(urlDate: Dayjs) {
     const startOfMonth = urlDate.startOf("month").toDate();
