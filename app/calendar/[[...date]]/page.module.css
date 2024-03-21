@@ -1,16 +1,16 @@
-.calendar {
+/* .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 40px; /* first row only */
-    grid-auto-rows: minmax(100px, auto); /* all subsequent rows */
+    grid-template-rows: 40px;
+    grid-auto-rows: minmax(100px, auto);
     gap: 1px;
     background-color: #cdcdcd;
 }
 
 .calendar > div:nth-child(-n + 7) {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 .calendar > div {
@@ -48,6 +48,6 @@
 
 .description {
     display: flex;
-    align-items: center; /* Centers vertically */
+    align-items: center;
     margin-bottom: 10px;
-}
+} */

@@ -42,6 +42,21 @@ VALUES    ("end of march +2", "time", 0, 1711954801000);
 INSERT    INTO Post (description, category, isImportant, beginDate)
 VALUES    ("end of march +3", "time", 1, 1711954802000);
 
+INSERT    INTO Post (description, category, beginDate, endDate)
+VALUES    ("b - e (same day)", "time", 1709676000000, 1709679600000);
+
+INSERT    INTO Post (description, category, beginDate, endDate)
+VALUES    ("b - e (only march)", "time", 1709676000000, 1709852400000);
+
+INSERT    INTO Post (description, category, beginDate, endDate)
+VALUES    ("b - e (mar to may)", "time", 1709676000000, 1716328800000);
+
+INSERT    INTO Post (description, category, beginDate, endDate)
+VALUES    ("b - e (feb to mar)", "time", 1708556400000, 1711058400000);
+
+INSERT    INTO Post (description, category, beginDate, endDate)
+VALUES    ("b - e (feb to may)", "time", 1708556400000, 1716328800000);
+
 SELECT    *
 FROM      Post
 ORDER BY  beginDate asc;
