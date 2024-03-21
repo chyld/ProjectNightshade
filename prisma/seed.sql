@@ -1,43 +1,47 @@
 DELETE    FROM Post;
 
 INSERT    INTO Post (description, category, beginDate)
-VALUES    ("😛 ran 5 miles up a very big hill and then took a break and rested and then proceeded to go back down the hill", "health", "2024-03-15 11:15:00");
+VALUES    ("😛 ran 🥾 5 miles up a very big hill 🌎 and then took a break 🤓 and rested and then proceeded to go back down the hill", "health", 1710991487000);
 
-INSERT    INTO Post (description, category, beginDate)
-VALUES    ("took vitamins and yeah it was super cool and amazing", "health", "2024-03-15 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("took vitamins and yeah it was super cool and amazing", "health", 1, 1710152687000);
 
-INSERT    INTO Post (description, category, beginDate)
-VALUES    ("slept 8 hours", "health", "2024-03-15 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("code all day, code all night", "code", 0, 1710152788000);
 
-INSERT    INTO Post (description, category, beginDate)
-VALUES    ("🥾 ran outside 2 miles", "health", "2024-03-16 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("python and javascript ftw", "code", 1, 1710152888000);
 
-INSERT    INTO Post (description, category, beginDate)
-VALUES    ("🕶 walked 120 minutes", "health", "2024-03-17 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("ran for days and day", "health", 0, 1710152589000);
 
-INSERT    INTO Post (description, category, beginDate)
-VALUES    ("ate salad", "health", "2024-03-17 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("wrote next.js apps", "code", 1, 1710152481000);
 
-INSERT    INTO Post (description, category, beginDate)
-VALUES    ("100 pushups", "health", "2024-03-19 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("january is soooo cold", "earth", 1, 1705663487000);
 
-INSERT    INTO Post (description, category, beginDate)
-VALUES    ("20 🤓 coding questions", "code", "2024-03-19 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("😛 😛 😛 happy birthday", "health", 1, 1722680687000);
 
-INSERT    INTO Post (description, category, beginDate)
-VALUES    ("build website", "code", "2024-03-19 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("mar 20 at 9:23 pm", "code", 1, 1710994849000);
 
-INSERT    INTO Post (description, category, isImportant, beginDate, endDate)
-VALUES    ("10 calculus problems", "math", 1, "2024-03-10 11:15:00", "2024-03-12 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("beginning of march", "time", 1, 1709280001000);
 
-INSERT    INTO Post (description, category, isImportant, beginDate, endDate)
-VALUES    ("3 physics problems", "math", 0, "2024-03-03 11:15:00", "2024-03-15 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("end of march +0", "time", 1, 1711954799000);
 
-INSERT    INTO Post (description, category, isImportant, beginDate, endDate)
-VALUES    ("🌎 ran outside", "health", 1, "2024-03-01 11:15:00", "2024-03-04 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("end of march +1", "time", 0, 1711954800000);
 
-INSERT    INTO Post (description, category, isImportant, beginDate, endDate)
-VALUES    ("eat salad", "health", 0, "2024-03-05 11:15:00", "2024-03-08 11:15:00");
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("end of march +2", "time", 0, 1711954801000);
+
+INSERT    INTO Post (description, category, isImportant, beginDate)
+VALUES    ("end of march +3", "time", 1, 1711954802000);
 
 SELECT    *
-FROM      Post;
+FROM      Post
+ORDER BY  beginDate asc;

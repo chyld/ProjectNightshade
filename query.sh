@@ -2,6 +2,5 @@
 
 sqlite3 prisma/dev.db <<EOF
 .headers on
-select * from post order by begindate;
+select * from post order by begindate asc;
 EOF
-

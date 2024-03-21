@@ -4,6 +4,6 @@ CREATE TABLE "Post" (
     "description" TEXT NOT NULL,
     "category" TEXT NOT NULL,
     "isImportant" BOOLEAN NOT NULL DEFAULT false,
-    "beginDate" DATETIME NOT NULL,
+    "beginDate" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "endDate" DATETIME
 );
