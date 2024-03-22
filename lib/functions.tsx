@@ -1,5 +1,18 @@
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import { DataModelInterface } from "../lib/types";
+import isBetween from "dayjs/plugin/isBetween";
+dayjs.extend(isBetween);
+
+export function dateFormToDate(date: FormDataEntryValue | null, shouldCreateNew: boolean) {
+    if (date) {
+        const [year, month, day] = (date as string).split("-").map(Number);
+        return new Date(year, month - 1, day);
+    } else if (shouldCreateNew) {
+        return new Date();
+    } else {
+        return null;
+    }
+}
 
 export function getWeeksInCurrentMonth(urlDate: Dayjs) {
     const firstDayOfMonth = urlDate.startOf("month");
@@ -16,5 +29,5 @@ export function scalarFilter(results: DataModelInterface[], dayCounter: Dayjs): 
 }
 
 export function vectorFilter(results: DataModelInterface[], dayCounter: Dayjs): DataModelInterface[] {
-    return results.filter((result, index) => result.beginDate && result.endDate && dayCounter.isAfter(result.beginDate) && dayCounter.isBefore(result.endDate));
+    return results.filter((result, index) => result.beginDate && result.endDate && dayCounter.isBetween(result.beginDate, result.endDate, "day", "[]"));
 }

@@ -4,6 +4,7 @@ import { createPost } from "@/lib/queries";
 import { DataModelInterface } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { dateFormToDate } from "@/lib/functions";
 
 export default function Page() {
     const router = useRouter();
@@ -13,8 +14,8 @@ export default function Page() {
             description: formData.get("description") as string,
             category: formData.get("category") as string,
             isImportant: !!formData.get("isImportant"),
-            beginDate: formData.get("beginDate") ? new Date(formData.get("beginDate") as string) : new Date(),
-            endDate: formData.get("endDate") ? new Date(formData.get("endDate") as string) : null,
+            beginDate: dateFormToDate(formData.get("beginDate"), true)!,
+            endDate: dateFormToDate(formData.get("endDate"), false),
         };
 
         createPost(rawFormData);
