@@ -23,16 +23,38 @@ export default function Page() {
     }
 
     return (
-        <div>
-            <Link href="/calendar">Calendar</Link>
-            <form action={createInvoice}>
-                <textarea name="description"></textarea>
-                <input type="text" name="category" />
-                <input type="checkbox" name="isImportant" />
-                <input type="date" name="beginDate" />
-                <input type="date" name="endDate" />
-                <button type="submit">Submit</button>
-            </form>
+        <div id="creation">
+            <div id="header">
+                <div id="current">New Post</div>
+                <div id="nav">
+                    <div>
+                        <Link href={`/calendar`}>{"[Today]"}</Link>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form action={createInvoice}>
+                    <div id="form">
+                        <div>
+                            <textarea name="description"></textarea>
+                        </div>
+                        <div>
+                            <input type="text" name="category" value="health" />
+                        </div>
+                        <div>
+                            Is Important?
+                            <input type="checkbox" name="isImportant" />
+                        </div>
+                        <div>
+                            <input type="date" name="beginDate" />
+                            <input type="date" name="endDate" />
+                        </div>
+                        <div>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

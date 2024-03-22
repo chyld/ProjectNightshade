@@ -54,7 +54,7 @@
 }
 
 #calendar .vecboxes {
-    background-color:lavender;
+    background-color: lavender;
 }
 
 #calendar .daybox {
@@ -65,10 +65,42 @@
 }
 
 #calendar .bullet {
-    display: inline-block;
     padding: 3px;
 }
 
 #calendar .important {
     background-color: chartreuse;
 }
+
+#calendar .scabox,
+#calendar .vecbox {
+    display: flex;
+    align-items: center;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+#form {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+#form > div {
+    margin-bottom: 20px;
+}
+
+#form textarea {
+    width: 300px;
+    height: 100px;
+}
+
+form input {
+    width: 300px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+/* --------------------------------------------------------------------------------------------- */

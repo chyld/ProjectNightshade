@@ -15,7 +15,7 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
         const title = `[${vector.category}] B: ${dayjs(vector.beginDate).format("YYYY/MM/DD")} E: ${dayjs(vector.endDate).format("YYYY/MM/DD")}`;
         return (
             <div key={index} className={classNames("vecbox", { important: vector.isImportant })}>
-                <span className="bullet">🔹</span>
+                <span className="material-symbols-outlined bullet">flash_on</span>
                 <span title={title} className="description">
                     {vector.description}
                 </span>
@@ -27,7 +27,7 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
         const title = `[${scalar.category}] ${dayjs(scalar.beginDate).format("YYYY/MM/DD")}`;
         return (
             <div key={index} className={classNames("scabox", { important: scalar.isImportant })}>
-                <span className="bullet">🔸</span>
+                <span className="material-symbols-outlined bullet">priority</span>
                 <span title={title} className="description">
                     {scalar.description}
                 </span>
