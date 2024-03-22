@@ -11,29 +11,27 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
 
     const scalarBoxes = scalars.map((scalar, index) => {
         return (
-            <div key={index}>
-                <div>{scalar.description}</div>
-                <div>{scalar.category}</div>
-                <div>{scalar.isImportant}</div>
+            <div key={index} className="scabox">
+                <div className="description">{scalar.description}</div>
+                <div className="category">{scalar.category}</div>
             </div>
         );
     });
 
     const vectorBoxes = vectors.map((vector, index) => {
         return (
-            <div key={index}>
-                <div>{vector.description}</div>
-                <div>{vector.category}</div>
-                <div>{vector.isImportant}</div>
+            <div key={index} className="vecbox">
+                <div className="description">{vector.description}</div>
+                <div className="category">{vector.category}</div>
             </div>
         );
     });
 
     return (
-        <div>
-            <div>{dayBox}</div>
-            <div>{scalarBoxes}</div>
-            <div>{vectorBoxes}</div>
+        <div className="full">
+            <div className="daybox">{dayBox}</div>
+            <div className="scaboxes">{scalarBoxes}</div>
+            <div className="vecboxes">{vectorBoxes}</div>
         </div>
     );
 }

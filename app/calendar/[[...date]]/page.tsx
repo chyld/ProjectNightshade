@@ -8,7 +8,7 @@ export default async function Calendar({ params }: CalendarParamsType) {
     const urlDate = params.date ? dayjs(`${params.date}-01`) : dayjs();
 
     return (
-        <div>
+        <div id="app">
             <CalendarHeader urlDate={urlDate} />
             <div id="calendar">
                 <CalendarDaysOfWeek></CalendarDaysOfWeek>

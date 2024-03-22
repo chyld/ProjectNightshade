@@ -4,7 +4,9 @@ export default function CalendarDaysOfWeek() {
     return (
         <>
             {daysOfTheWeek.map((day, index) => (
-                <div key={index}>{day}</div>
+                <div key={index} className="name">
+                    {day}
+                </div>
             ))}
         </>
     );
