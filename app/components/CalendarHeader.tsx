@@ -7,10 +7,13 @@ export default function CalendarHeader({ urlDate }: { urlDate: Dayjs }) {
             <div id="current">{urlDate.format("MMMM YYYY")}</div>
             <div id="nav">
                 <div>
-                    <Link href={`/calendar/${urlDate.subtract(1, "month").format("YYYY-MM")}`}>{"[Back]"}</Link>
+                    <Link href={`/new`}>{"[New]"}</Link>
                 </div>
                 <div>
-                    <Link href={`/calendar`}>{"[Home]"}</Link>
+                    <Link href={`/calendar`}>{"[Today]"}</Link>
+                </div>
+                <div>
+                    <Link href={`/calendar/${urlDate.subtract(1, "month").format("YYYY-MM")}`}>{"[Back]"}</Link>
                 </div>
                 <div>
                     <Link href={`/calendar/${urlDate.add(1, "month").format("YYYY-MM")}`}>{"[Next]"}</Link>
