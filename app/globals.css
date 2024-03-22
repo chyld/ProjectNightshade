@@ -1,0 +1,60 @@
+:root {
+    --border-color: rgb(218, 220, 224);
+}
+
+#header {
+    margin-bottom: 50px;
+}
+#header > #current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#nav a {
+  text-decoration: none;
+  color: black;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+#calendar > div {
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#calendar > .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#calendar .daybox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#calendar .bullet {
+    color: orangered;
+    display: inline-block;
+    padding: 3px;
+}
+
+#calendar .important {
+    background-color: chartreuse;
+}

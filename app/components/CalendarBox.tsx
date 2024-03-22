@@ -1,4 +1,6 @@
+import dayjs from "dayjs";
 import { DataModelInterface } from "@/lib/types";
+import classNames from "classnames";
 
 export interface CalendarBoxInterface {
     day: number;
@@ -9,20 +11,26 @@ export interface CalendarBoxInterface {
 export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterface) {
     const dayBox = <div>{day}</div>;
 
-    const scalarBoxes = scalars.map((scalar, index) => {
+    const vectorBoxes = vectors.map((vector, index) => {
+        const title = `[${vector.category}] B: ${dayjs(vector.beginDate).format("YYYY/MM/DD")} E: ${dayjs(vector.endDate).format("YYYY/MM/DD")}`;
         return (
-            <div key={index} className="scabox">
-                <div className="description">{scalar.description}</div>
-                <div className="category">{scalar.category}</div>
+            <div key={index} className={classNames("vecbox", { important: vector.isImportant })}>
+                <span className="bullet">🔹</span>
+                <span title={title} className="description">
+                    {vector.description}
+                </span>
             </div>
         );
     });
 
-    const vectorBoxes = vectors.map((vector, index) => {
+    const scalarBoxes = scalars.map((scalar, index) => {
+        const title = `[${scalar.category}] ${dayjs(scalar.beginDate).format("YYYY/MM/DD")}`;
         return (
-            <div key={index} className="vecbox">
-                <div className="description">{vector.description}</div>
-                <div className="category">{vector.category}</div>
+            <div key={index} className={classNames("scabox", { important: scalar.isImportant })}>
+                <span className="bullet">🔸</span>
+                <span title={title} className="description">
+                    {scalar.description}
+                </span>
             </div>
         );
     });
@@ -30,8 +38,8 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
     return (
         <div className="full">
             <div className="daybox">{dayBox}</div>
-            <div className="scaboxes">{scalarBoxes}</div>
             <div className="vecboxes">{vectorBoxes}</div>
+            <div className="scaboxes">{scalarBoxes}</div>
         </div>
     );
 }
