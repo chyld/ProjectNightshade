@@ -1,8 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Fauna+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+
 :root {
     --border-color: rgb(218, 220, 224);
 }
 
 #header {
+    font-family: "Fauna One", serif;
     margin-bottom: 50px;
 }
 #header > #current {
@@ -13,19 +18,25 @@
 }
 
 #nav {
+    font-family: "Cutive Mono", monospace;
     display: flex;
     justify-content: center;
     gap: 50px;
 }
 
 #nav a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 #calendar {
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto; /* only sets the height for the first row */
+    grid-auto-rows: minmax(150px, auto); /* subsequent rows */
     border-top: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
 }
@@ -42,6 +53,10 @@
     padding: 10px;
 }
 
+#calendar .vecboxes {
+    background-color:lavender;
+}
+
 #calendar .daybox {
     display: flex;
     justify-content: center;
@@ -50,7 +65,6 @@
 }
 
 #calendar .bullet {
-    color: orangered;
     display: inline-block;
     padding: 3px;
 }
