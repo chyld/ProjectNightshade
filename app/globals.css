@@ -105,3 +105,32 @@ input[type="checkbox"] {
 }
 
 /* --------------------------------------------------------------------------------------------- */
+
+#posts {
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+}
+
+#posts > .post {
+    padding: 5px;
+    background-color: rgb(237, 250, 230);
+    border: 1px solid rgb(67, 81, 59);
+}
+
+#posts .id {
+    display: inline-block;
+    padding: 5px;
+    color: azure;
+    border: 1px solid rgb(67, 81, 59);
+    background-color: rgb(67, 81, 59);
+}
+
+#posts > .important {
+    background-color: rgb(250, 230, 246);
+}
+
+/* --------------------------------------------------------------------------------------------- */

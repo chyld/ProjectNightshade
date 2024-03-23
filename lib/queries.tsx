@@ -6,6 +6,16 @@ import { DataModelInterface } from "./types";
 
 const prisma = new PrismaClient();
 
+export async function getAllPosts() {
+    const results = await prisma.post.findMany({
+        orderBy: {
+            beginDate: "asc",
+        },
+    });
+
+    return results;
+}
+
 export async function createPost(data: Omit<DataModelInterface, "id">) {
     const _ = await prisma.post.create({
         data,

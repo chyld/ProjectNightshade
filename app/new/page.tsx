@@ -27,8 +27,11 @@ export default function Page() {
             <div id="header">
                 <div id="current">New Post</div>
                 <div id="nav">
+                <div>
+                        <Link href={`/list`}>{"[List]"}</Link>
+                    </div>
                     <div>
-                        <Link href={`/calendar`}>{"[Today]"}</Link>
+                        <Link href={`/calendar`}>{"[Calendar]"}</Link>
                     </div>
                 </div>
             </div>

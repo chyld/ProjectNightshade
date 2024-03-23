@@ -10,6 +10,9 @@ export default function CalendarHeader({ urlDate }: { urlDate: Dayjs }) {
                     <Link href={`/new`}>{"[New]"}</Link>
                 </div>
                 <div>
+                    <Link href={`/list`}>{"[List]"}</Link>
+                </div>
+                <div>
                     <Link href={`/calendar`}>{"[Today]"}</Link>
                 </div>
                 <div>
