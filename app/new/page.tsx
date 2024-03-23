@@ -27,7 +27,7 @@ export default function Page() {
             <div id="header">
                 <div id="current">New Post</div>
                 <div id="nav">
-                <div>
+                    <div>
                         <Link href={`/list`}>{"[List]"}</Link>
                     </div>
                     <div>
@@ -42,7 +42,7 @@ export default function Page() {
                             <textarea name="description"></textarea>
                         </div>
                         <div>
-                            <input type="text" name="category" value="health" />
+                            <input type="text" name="category" />
                         </div>
                         <div>
                             Is Important?

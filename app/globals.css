@@ -73,6 +73,14 @@
     background-color: chartreuse;
 }
 
+#calendar .danger {
+    background-color: rgb(255, 0, 191);
+}
+
+#calendar .description {
+    padding-left: 3px;
+}
+
 #calendar .scabox,
 #calendar .vecbox {
     display: flex;
