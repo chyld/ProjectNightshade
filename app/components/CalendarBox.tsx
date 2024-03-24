@@ -1,14 +1,9 @@
 import dayjs from "dayjs";
-import { DataModelInterface } from "@/lib/types";
+import { CalendarBoxInterface } from "@/lib/types";
 import CalendarIcon from "./CalendarIcon";
 import CalendarExclamation from "./CalendarExclamation";
 import styles from "../calendar/[[...date]]/page.module.css";
-
-export interface CalendarBoxInterface {
-    day: number;
-    scalars: DataModelInterface[];
-    vectors: DataModelInterface[];
-}
+import { darkenColor } from "@/lib/functions";
 
 export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterface) {
     const dayBox = <div>{day}</div>;
@@ -19,7 +14,7 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
             <div key={index} className={styles.vecbox}>
                 <CalendarIcon category={vector.category} />
                 <CalendarExclamation isImportant={vector.isImportant} />
-                <span style={{ backgroundColor: vector.color }} title={title} className={styles.description}>
+                <span style={{ backgroundColor: vector.color, border: `2px solid ${darkenColor(vector.color)}` }} title={title} className={styles.description}>
                     {vector.description}
                 </span>
             </div>
@@ -32,7 +27,7 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
             <div key={index} className={styles.scabox}>
                 <CalendarIcon category={scalar.category} />
                 <CalendarExclamation isImportant={scalar.isImportant} />
-                <span style={{ backgroundColor: scalar.color }} title={title} className={styles.description}>
+                <span style={{ backgroundColor: scalar.color, border: `2px solid ${darkenColor(scalar.color)}` }} title={title} className={styles.description}>
                     {scalar.description}
                 </span>
             </div>

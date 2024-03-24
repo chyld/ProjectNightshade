@@ -59,11 +59,11 @@
 }
 
 .vecboxes {
-    --unused-variable: 0;
+    padding: 3px;
 }
 
 .scaboxes {
-    --unused-variable: 0;
+    padding: 3px;
 }
 
 .vecbox {

@@ -61,28 +61,24 @@ export default function Page() {
                         <div>
                             <label>Border</label>
                             <select name="color">
-                                <option value="#fafaf9">Stone 0</option>
-                                <option value="#f5f5f4">Stone 1</option>
-                                <option value="#e7e5e4">Stone 2</option>
-                                <option value="#d6d3d1">Stone 3</option>
-                                <option value="#a8a29e">Stone 4</option>
-                                <option value="#f87171">Red</option>
-                                <option value="#fb923c">Orange</option>
-                                <option value="#fbbf24">Amber</option>
-                                <option value="#facc15">Yellow</option>
-                                <option value="#a3e635">Lime</option>
-                                <option value="#4ade80">Green</option>
-                                <option value="#34d399">Emerald</option>
-                                <option value="#2dd4bf">Teal</option>
-                                <option value="#22d3ee">Cyan</option>
-                                <option value="#38bdf8">Sky</option>
-                                <option value="#60a5fa">Blue</option>
-                                <option value="#818cf8">Indigo</option>
-                                <option value="#a78bfa">Violet</option>
-                                <option value="#c084fc">Purple</option>
-                                <option value="#e879f9">Fuchsia</option>
-                                <option value="#f472b6">Pink</option>
-                                <option value="#fb7185">Rose</option>
+                                <option value="#E7E5E4">Stone</option>
+                                <option value="#FECACA">Red</option>
+                                <option value="#FED7AA">Orange</option>
+                                <option value="#FDE68A">Amber</option>
+                                <option value="#FEF08A">Yellow</option>
+                                <option value="#D9F99D">Lime</option>
+                                <option value="#BBF7D0">Green</option>
+                                <option value="#A7F3D0">Emerald</option>
+                                <option value="#99F6E4">Teal</option>
+                                <option value="#A5F3FC">Cyan</option>
+                                <option value="#BAE6FD">Sky</option>
+                                <option value="#BFDBFE">Blue</option>
+                                <option value="#C7D2FE">Indigo</option>
+                                <option value="#DDD6FE">Violet</option>
+                                <option value="#E9D5FF">Purple</option>
+                                <option value="#F5D0FE">Fuchsia</option>
+                                <option value="#FBCFE8">Pink</option>
+                                <option value="#FECDD3">Rose</option>
                             </select>
                         </div>
                         <div>

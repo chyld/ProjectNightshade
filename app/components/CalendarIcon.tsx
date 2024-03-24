@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import styles from "../calendar/[[...date]]/page.module.css";
+import { darkenColor } from "@/lib/functions";
 
 export default function CalendarIcon({ category }: { category: string }) {
     let icon = "";
@@ -8,40 +9,40 @@ export default function CalendarIcon({ category }: { category: string }) {
     switch (category) {
         case "health":
             icon = "health_and_safety";
-            color = "#38bdf8"; // Sky
+            color = "#BAE6FD"; // Sky
             break;
         case "exercise":
             icon = "vital_signs";
-            color = "#22d3ee"; // Cyan
+            color = "#A5F3FC"; // Cyan
             break;
         case "fasting":
             icon = "no_meals";
-            color = "#e879f9"; // Fuchsia
+            color = "#F5D0FE"; // Fuchsia
             break;
         case "nature":
             icon = "eco";
-            color = "#a3e635"; // Lime
+            color = "#D9F99D"; // Lime
             break;
         case "code":
             icon = "code";
-            color = "#a78bfa"; // Violet
+            color = "#DDD6FE"; // Violet
             break;
         case "math":
             icon = "calculate";
-            color = "#818cf8"; // Indigo
+            color = "#C7D2FE"; // Indigo
             break;
         case "job":
             icon = "work";
-            color = "#a8a29e"; // Stone
+            color = "#E7E5E4"; // Stone
             break;
         case "danger":
             icon = "warning";
-            color = "#f87171"; //Red
+            color = "#FECACA"; //Red
             break;
     }
 
     return (
-        <span style={{ backgroundColor: color }} className={classNames("material-symbols-outlined", styles.bullet)}>
+        <span style={{ backgroundColor: color, border: `2px solid ${darkenColor(color)}` }} className={classNames("material-symbols-outlined", styles.bullet)}>
             {icon}
         </span>
     );

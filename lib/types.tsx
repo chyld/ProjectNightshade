@@ -13,3 +13,9 @@ export interface DataModelInterface {
     beginDate: Date;
     endDate: Date | null;
 }
+
+export interface CalendarBoxInterface {
+    day: number;
+    scalars: DataModelInterface[];
+    vectors: DataModelInterface[];
+}

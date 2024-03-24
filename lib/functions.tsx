@@ -2,6 +2,11 @@ import dayjs, { Dayjs } from "dayjs";
 import { DataModelInterface } from "../lib/types";
 import isBetween from "dayjs/plugin/isBetween";
 dayjs.extend(isBetween);
+import Color from "color";
+
+export function darkenColor(color: string) {
+    return Color(color).darken(0.5).hex();
+}
 
 export function dateFormToDate(date: FormDataEntryValue | null, shouldCreateNew: boolean) {
     if (date) {
