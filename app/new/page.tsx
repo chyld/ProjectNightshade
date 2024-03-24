@@ -13,6 +13,7 @@ export default function Page() {
         const rawFormData: Omit<DataModelInterface, "id"> = {
             description: formData.get("description") as string,
             category: formData.get("category") as string,
+            color: formData.get("color") as string,
             isImportant: !!formData.get("isImportant"),
             beginDate: dateFormToDate(formData.get("beginDate"), true)!,
             endDate: dateFormToDate(formData.get("endDate"), false),
@@ -23,6 +24,8 @@ export default function Page() {
     }
 
     return (
+        // colors
+        // https://tailwindcss.com/docs/customizing-colors
         <div id="creation">
             <div id="header">
                 <div id="current">New Post</div>
@@ -42,7 +45,32 @@ export default function Page() {
                             <textarea name="description"></textarea>
                         </div>
                         <div>
-                            <input type="text" name="category" />
+                            <div>
+                                <input type="text" name="category" />
+                            </div>
+                            <div className="note">[danger] [nature]</div>
+                        </div>
+                        <div>
+                            <select name="color">
+                                <option value="#a8a29e">Stone</option>
+                                <option value="#f87171">Red</option>
+                                <option value="#fb923c">Orange</option>
+                                <option value="#fbbf24">Amber</option>
+                                <option value="#facc15">Yellow</option>
+                                <option value="#a3e635">Lime</option>
+                                <option value="#4ade80">Green</option>
+                                <option value="#34d399">Emerald</option>
+                                <option value="#2dd4bf">Teal</option>
+                                <option value="#22d3ee">Cyan</option>
+                                <option value="#38bdf8">Sky</option>
+                                <option value="#60a5fa">Blue</option>
+                                <option value="#818cf8">Indigo</option>
+                                <option value="#a78bfa">Violet</option>
+                                <option value="#c084fc">Purple</option>
+                                <option value="#e879f9">Fuchsia</option>
+                                <option value="#f472b6">Pink</option>
+                                <option value="#fb7185">Rose</option>
+                            </select>
                         </div>
                         <div>
                             Is Important?

@@ -28,7 +28,7 @@ export default async function List() {
                                 {dayjs(post.beginDate).format("YYYY/MM/DD")} - {post.endDate ? dayjs(post.endDate).format("YYYY/MM/DD") : null}
                             </div>
                             <div className="info">
-                                [{post.category}] {post.description}
+                                [{post.category}] <span style={{ backgroundColor: post.color }}>[{post.color}]</span> {post.description}
                             </div>
                         </div>
                     );

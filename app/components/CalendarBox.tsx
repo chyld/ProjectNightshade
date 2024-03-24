@@ -8,9 +8,21 @@ export interface CalendarBoxInterface {
     vectors: DataModelInterface[];
 }
 
-function iconSpan(name: string, category: string) {
-    const danger = category === "danger";
-    return <span className={classNames("material-symbols-outlined", "bullet", { danger })}>{name}</span>;
+function iconSpan(icon: string, category: string, color: string) {
+    switch (category) {
+        case "nature":
+            icon = "eco";
+            break;
+        case "danger":
+            icon = "warning";
+            break;
+    }
+
+    return (
+        <span style={{ backgroundColor: color }} className={classNames("material-symbols-outlined", "bullet")}>
+            {icon}
+        </span>
+    );
 }
 
 export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterface) {
@@ -19,9 +31,9 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
     const vectorBoxes = vectors.map((vector, index) => {
         const title = `[${vector.category}] B: ${dayjs(vector.beginDate).format("YYYY/MM/DD")} E: ${dayjs(vector.endDate).format("YYYY/MM/DD")}`;
         return (
-            <div key={index} className={classNames("vecbox", { important: vector.isImportant })}>
-                {iconSpan("flash_on", vector.category)}
-                <span title={title} className="description">
+            <div key={index} className="vecbox">
+                {iconSpan("priority", vector.category, vector.color)}
+                <span title={title} className={classNames("description", { important: vector.isImportant })}>
                     {vector.description}
                 </span>
             </div>
@@ -31,9 +43,9 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
     const scalarBoxes = scalars.map((scalar, index) => {
         const title = `[${scalar.category}] ${dayjs(scalar.beginDate).format("YYYY/MM/DD")}`;
         return (
-            <div key={index} className={classNames("scabox", { important: scalar.isImportant })}>
-                {iconSpan("priority", scalar.category)}
-                <span title={title} className="description">
+            <div key={index} className="scabox">
+                {iconSpan("priority", scalar.category, scalar.color)}
+                <span title={title} className={classNames("description", { important: scalar.isImportant })}>
                     {scalar.description}
                 </span>
             </div>

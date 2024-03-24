@@ -67,6 +67,7 @@
 
 #calendar .bullet {
     padding: 3px;
+    margin-right: 3px;
 }
 
 #calendar .important {
@@ -97,6 +98,11 @@
 
 #form > div {
     margin-bottom: 20px;
+}
+
+#form .note {
+    color: #757575;
+    margin-top: 10px;
 }
 
 #form textarea {
