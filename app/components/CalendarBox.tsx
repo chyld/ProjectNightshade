@@ -14,7 +14,7 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
             <div key={index} className={styles.vecbox}>
                 <CalendarIcon category={vector.category} />
                 <CalendarExclamation isImportant={vector.isImportant} />
-                <span style={{ backgroundColor: vector.color, border: `2px solid ${darkenColor(vector.color)}` }} title={title} className={styles.description}>
+                <span title={title} className={styles.description}>
                     {vector.description}
                 </span>
             </div>
@@ -27,7 +27,7 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
             <div key={index} className={styles.scabox}>
                 <CalendarIcon category={scalar.category} />
                 <CalendarExclamation isImportant={scalar.isImportant} />
-                <span style={{ backgroundColor: scalar.color, border: `2px solid ${darkenColor(scalar.color)}` }} title={title} className={styles.description}>
+                <span title={title} className={styles.description}>
                     {scalar.description}
                 </span>
             </div>

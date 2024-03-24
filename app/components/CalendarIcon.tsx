@@ -9,15 +9,15 @@ export default function CalendarIcon({ category }: { category: string }) {
     switch (category) {
         case "health":
             icon = "health_and_safety";
-            color = "#BAE6FD"; // Sky
+            color = "#D9F99D"; // Lime
             break;
         case "exercise":
             icon = "vital_signs";
-            color = "#A5F3FC"; // Cyan
+            color = "#D9F99D"; // Lime
             break;
         case "fasting":
             icon = "no_meals";
-            color = "#F5D0FE"; // Fuchsia
+            color = "#D9F99D"; // Lime
             break;
         case "nature":
             icon = "eco";
@@ -29,7 +29,11 @@ export default function CalendarIcon({ category }: { category: string }) {
             break;
         case "math":
             icon = "calculate";
-            color = "#C7D2FE"; // Indigo
+            color = "#DDD6FE"; // Violet
+            break;
+        case "science":
+            icon = "science";
+            color = "#DDD6FE"; // Violet
             break;
         case "job":
             icon = "work";
@@ -37,7 +41,7 @@ export default function CalendarIcon({ category }: { category: string }) {
             break;
         case "danger":
             icon = "warning";
-            color = "#FECACA"; //Red
+            color = "#FECDD3"; //Rose
             break;
     }
 

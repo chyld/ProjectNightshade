@@ -14,7 +14,6 @@ export default function Page() {
         const rawFormData: Omit<DataModelInterface, "id"> = {
             description: formData.get("description") as string,
             category: formData.get("category") as string,
-            color: formData.get("color") as string,
             isImportant: !!formData.get("isImportant"),
             beginDate: dateFormToDate(formData.get("beginDate"), true)!,
             endDate: dateFormToDate(formData.get("endDate"), false),
@@ -27,6 +26,7 @@ export default function Page() {
     return (
         // colors
         // https://tailwindcss.com/docs/customizing-colors
+        // https://tailwindcolor.com/
         <div>
             <div id={styles.header}>
                 <div id={styles.title}>New Post</div>
@@ -54,31 +54,9 @@ export default function Page() {
                                 <option value="nature">Nature</option>
                                 <option value="code">Code</option>
                                 <option value="math">Math</option>
+                                <option value="science">Science</option>
                                 <option value="job">Job</option>
                                 <option value="danger">Danger</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label>Border</label>
-                            <select name="color">
-                                <option value="#E7E5E4">Stone</option>
-                                <option value="#FECACA">Red</option>
-                                <option value="#FED7AA">Orange</option>
-                                <option value="#FDE68A">Amber</option>
-                                <option value="#FEF08A">Yellow</option>
-                                <option value="#D9F99D">Lime</option>
-                                <option value="#BBF7D0">Green</option>
-                                <option value="#A7F3D0">Emerald</option>
-                                <option value="#99F6E4">Teal</option>
-                                <option value="#A5F3FC">Cyan</option>
-                                <option value="#BAE6FD">Sky</option>
-                                <option value="#BFDBFE">Blue</option>
-                                <option value="#C7D2FE">Indigo</option>
-                                <option value="#DDD6FE">Violet</option>
-                                <option value="#E9D5FF">Purple</option>
-                                <option value="#F5D0FE">Fuchsia</option>
-                                <option value="#FBCFE8">Pink</option>
-                                <option value="#FECDD3">Rose</option>
                             </select>
                         </div>
                         <div>
