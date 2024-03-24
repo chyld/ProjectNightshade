@@ -1,0 +1,41 @@
+#header {
+    font-family: "Fauna One", serif;
+    margin-bottom: 50px;
+}
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+}
+
+#nav {
+    font-family: "Cutive Mono", monospace;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: black;
+}
+
+#posts {
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+}
+
+.post {
+    padding: 5px;
+    background-color: rgb(237, 250, 230);
+    border: 1px solid rgb(67, 81, 59);
+}
+
+.important {
+    background-color: chartreuse;
+}

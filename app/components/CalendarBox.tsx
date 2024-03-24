@@ -1,38 +1,13 @@
 import dayjs from "dayjs";
 import { DataModelInterface } from "@/lib/types";
-import classNames from "classnames";
+import CalendarIcon from "./CalendarIcon";
+import CalendarExclamation from "./CalendarExclamation";
+import styles from "../calendar/[[...date]]/page.module.css";
 
 export interface CalendarBoxInterface {
     day: number;
     scalars: DataModelInterface[];
     vectors: DataModelInterface[];
-}
-
-function iconSpan(icon: string, category: string, color: string) {
-    switch (category) {
-        case "nature":
-            icon = "eco";
-            color = "#a3e635"; // Lime
-            break;
-        case "danger":
-            icon = "warning";
-            color = "#f87171"; //Red
-            break;
-        case "code":
-            icon = "code";
-            color = "#a78bfa"; // Violet
-            break;
-        case "health":
-            icon = "vital_signs";
-            color = "#22d3ee"; // Cyan
-            break;
-    }
-
-    return (
-        <span style={{ backgroundColor: color }} className={classNames("material-symbols-outlined", "bullet")}>
-            {icon}
-        </span>
-    );
 }
 
 export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterface) {
@@ -41,9 +16,10 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
     const vectorBoxes = vectors.map((vector, index) => {
         const title = `[${vector.category}] B: ${dayjs(vector.beginDate).format("YYYY/MM/DD")} E: ${dayjs(vector.endDate).format("YYYY/MM/DD")}`;
         return (
-            <div key={index} className="vecbox">
-                {iconSpan("priority", vector.category, vector.color)}
-                <span title={title} className={classNames("description", { important: vector.isImportant })}>
+            <div key={index} className={styles.vecbox}>
+                <CalendarIcon category={vector.category} />
+                <CalendarExclamation isImportant={vector.isImportant} />
+                <span style={{ backgroundColor: vector.color }} title={title} className={styles.description}>
                     {vector.description}
                 </span>
             </div>
@@ -53,9 +29,10 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
     const scalarBoxes = scalars.map((scalar, index) => {
         const title = `[${scalar.category}] ${dayjs(scalar.beginDate).format("YYYY/MM/DD")}`;
         return (
-            <div key={index} className="scabox">
-                {iconSpan("priority", scalar.category, scalar.color)}
-                <span title={title} className={classNames("description", { important: scalar.isImportant })}>
+            <div key={index} className={styles.scabox}>
+                <CalendarIcon category={scalar.category} />
+                <CalendarExclamation isImportant={scalar.isImportant} />
+                <span style={{ backgroundColor: scalar.color }} title={title} className={styles.description}>
                     {scalar.description}
                 </span>
             </div>
@@ -63,10 +40,10 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
     });
 
     return (
-        <div className="full">
-            <div className="daybox">{dayBox}</div>
-            <div className="vecboxes">{vectorBoxes}</div>
-            <div className="scaboxes">{scalarBoxes}</div>
+        <div>
+            <div className={styles.daybox}>{dayBox}</div>
+            <div className={styles.vecboxes}>{vectorBoxes}</div>
+            <div className={styles.scaboxes}>{scalarBoxes}</div>
         </div>
     );
 }

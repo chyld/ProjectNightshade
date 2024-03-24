@@ -24,7 +24,7 @@ export default async function CalendarBuilder({ urlDate }: { urlDate: Dayjs }) {
                         dayCounter = dayCounter.add(1, "day");
                         return box;
                     } else {
-                        return <div key={key} className="empty"></div>;
+                        return <div key={key}></div>;
                     }
                 })
             )}

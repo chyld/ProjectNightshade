@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Dayjs } from "dayjs";
+import styles from "../calendar/[[...date]]/page.module.css";
 
 export default function CalendarHeader({ urlDate }: { urlDate: Dayjs }) {
     return (
-        <div id="header">
-            <div id="current">{urlDate.format("MMMM YYYY")}</div>
-            <div id="nav">
+        <div id={styles.header}>
+            <div id={styles.title}>{urlDate.format("MMMM YYYY")}</div>
+            <div id={styles.nav}>
                 <div>
                     <Link href={`/new`}>{"[New]"}</Link>
                 </div>

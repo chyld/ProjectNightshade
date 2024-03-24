@@ -5,6 +5,7 @@ import { DataModelInterface } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { dateFormToDate } from "@/lib/functions";
+import styles from "./page.module.css";
 
 export default function Page() {
     const router = useRouter();
@@ -26,10 +27,10 @@ export default function Page() {
     return (
         // colors
         // https://tailwindcss.com/docs/customizing-colors
-        <div id="creation">
-            <div id="header">
-                <div id="current">New Post</div>
-                <div id="nav">
+        <div>
+            <div id={styles.header}>
+                <div id={styles.title}>New Post</div>
+                <div id={styles.nav}>
                     <div>
                         <Link href={`/list`}>{"[List]"}</Link>
                     </div>
@@ -40,28 +41,44 @@ export default function Page() {
             </div>
             <div>
                 <form action={createInvoice}>
-                    <div id="form">
+                    <div id={styles.form}>
                         <div>
                             <textarea name="description"></textarea>
                         </div>
                         <div>
-                            <div>
-                                <input type="text" name="category" />
-                            </div>
-                            <div className="note">[danger] [nature] [code] [health]</div>
+                            <label>Category</label>
+                            <select name="category">
+                                <option value="health">Health</option>
+                                <option value="exercise">Exercise</option>
+                                <option value="fasting">Fasting</option>
+                                <option value="nature">Nature</option>
+                                <option value="code">Code</option>
+                                <option value="math">Math</option>
+                                <option value="job">Job</option>
+                                <option value="danger">Danger</option>
+                            </select>
                         </div>
                         <div>
+                            <label>Border</label>
                             <select name="color">
-                                <option value="#a8a29e">Stone</option>
+                                <option value="#fafaf9">Stone 0</option>
+                                <option value="#f5f5f4">Stone 1</option>
+                                <option value="#e7e5e4">Stone 2</option>
+                                <option value="#d6d3d1">Stone 3</option>
+                                <option value="#a8a29e">Stone 4</option>
+                                <option value="#f87171">Red</option>
                                 <option value="#fb923c">Orange</option>
                                 <option value="#fbbf24">Amber</option>
                                 <option value="#facc15">Yellow</option>
+                                <option value="#a3e635">Lime</option>
                                 <option value="#4ade80">Green</option>
                                 <option value="#34d399">Emerald</option>
                                 <option value="#2dd4bf">Teal</option>
+                                <option value="#22d3ee">Cyan</option>
                                 <option value="#38bdf8">Sky</option>
                                 <option value="#60a5fa">Blue</option>
                                 <option value="#818cf8">Indigo</option>
+                                <option value="#a78bfa">Violet</option>
                                 <option value="#c084fc">Purple</option>
                                 <option value="#e879f9">Fuchsia</option>
                                 <option value="#f472b6">Pink</option>
@@ -69,7 +86,7 @@ export default function Page() {
                             </select>
                         </div>
                         <div>
-                            Is Important?
+                            <label>Important?</label>
                             <input type="checkbox" name="isImportant" />
                         </div>
                         <div>
