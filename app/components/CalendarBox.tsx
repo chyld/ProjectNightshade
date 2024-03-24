@@ -16,6 +16,12 @@ function iconSpan(icon: string, category: string, color: string) {
         case "danger":
             icon = "warning";
             break;
+        case "code":
+            icon = "code";
+            break;
+        case "health":
+            icon = "vital_signs";
+            break;
     }
 
     return (

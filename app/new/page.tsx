@@ -48,7 +48,7 @@ export default function Page() {
                             <div>
                                 <input type="text" name="category" />
                             </div>
-                            <div className="note">[danger] [nature]</div>
+                            <div className="note">[danger] [nature] [code] [health]</div>
                         </div>
                         <div>
                             <select name="color">
