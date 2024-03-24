@@ -12,15 +12,19 @@ function iconSpan(icon: string, category: string, color: string) {
     switch (category) {
         case "nature":
             icon = "eco";
+            color = "#a3e635"; // Lime
             break;
         case "danger":
             icon = "warning";
+            color = "#f87171"; //Red
             break;
         case "code":
             icon = "code";
+            color = "#a78bfa"; // Violet
             break;
         case "health":
             icon = "vital_signs";
+            color = "#22d3ee"; // Cyan
             break;
     }
 
