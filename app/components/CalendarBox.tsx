@@ -15,7 +15,7 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
                 <CalendarIcon category={vector.category} />
                 <CalendarExclamation isImportant={vector.isImportant} />
                 <span title={title} className={styles.description}>
-                    {vector.description.split(/\r?\n/).map(d => <div>{d}</div>)}
+                    {vector.description.split(/\r?\n/).map((d,i) => <div key={i}>{d}</div>)}
                 </span>
             </div>
         );
@@ -28,7 +28,7 @@ export default function CalendarBox({ day, scalars, vectors }: CalendarBoxInterf
                 <CalendarIcon category={scalar.category} />
                 <CalendarExclamation isImportant={scalar.isImportant} />
                 <span title={title} className={styles.description}>
-                    {scalar.description.split(/\r?\n/).map(d => <div>{d}</div>)}
+                    {scalar.description.split(/\r?\n/).map((d,i) => <div key={i}>{d}</div>)}
                 </span>
             </div>
         );
